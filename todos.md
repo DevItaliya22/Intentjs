@@ -16,6 +16,9 @@ GET /posts/:id/comments - Fetch comments on a post.
 POST /posts/:id/comments - Add a comment to a post.
 DELETE /posts/:postId/comments/:commentId - Delete a comment.
 
+POST /upload/profile-picture - Upload a profile picture.
+POST /upload/banner-picture - Upload a banner picture.
+POST /upload/post-image - Upload an image for a post.
 
 remaining : 
 POST /auth/forgot-password - Request password reset. => need to send mail 
@@ -27,10 +30,6 @@ GET /notifications - Fetch all notifications for the logged-in user.
 PUT /notifications/:id/mark-as-read - Mark a notification as read.
 DELETE /notifications/:id - Delete a specific notification.
 
-File Upload Routes (AWS S3 Integration)
-POST /upload/profile-picture - Upload a profile picture.
-POST /upload/banner-picture - Upload a banner picture.
-POST /upload/post-image - Upload an image for a post.
 
 Other Routes
 GET /feed - Fetch the user’s feed (posts from followed users).
@@ -39,3 +38,6 @@ GET /search - Search for users or posts. nothing just
 C:\Users\dell\Desktop\dev-intent\node_modules\@intentjs\core\dist\lib\rest\foundation\server.js
 
 there is a issue , create query most of the tiem runs 2 time, 
+
+
+bug : [error] 2024-12-24T14:09:36.137Z : " ENOENT: no such file or directory, open 'C:\\Users\\dell\\Desktop\\dev-intent\\storage\\uploads\\.gitigrnore'"
