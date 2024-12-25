@@ -13,6 +13,7 @@ import { Server } from '@intentjs/hyper-express';
 import bodyParser from 'body-parser';
 import { AuthMiddleware } from './middleware/middleware';
 import { PostController } from './controllers/post';
+import { S3Controller } from './controllers/s3';
 
 export class HttpKernel extends Kernel {
   /**
@@ -20,7 +21,7 @@ export class HttpKernel extends Kernel {
    * Read more - https://tryintent.com/docs/controllers
    */
   public controllers(): Type<any>[] {
-    return [UserController, MainController, AuthController,PostController];
+    return [UserController, MainController, AuthController, PostController, S3Controller];
   }
 
   /**
@@ -46,9 +47,10 @@ export class HttpKernel extends Kernel {
       .for("/user/unfollow/:id")
       .for("/post/")
       .for("/post/:id")
-        .for("/post/like/:id")
-        .for("/post/dislike/:id")
-        .for("/post/:id/comment")
+      .for("/post/like/:id")
+      .for("/post/dislike/:id")
+      .for("/post/:id/comment")
+      .for("/upload/*")
   }
 
   /**
@@ -63,5 +65,5 @@ export class HttpKernel extends Kernel {
   /**
    * @param app
    */
-  public async boot(app: Server): Promise<void> {}
+  public async boot(app: Server): Promise<void> { }
 }
