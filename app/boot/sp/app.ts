@@ -6,6 +6,7 @@ import { FollowDbRepository } from 'app/repositories/followDbRepository';
 import { NotificationDbRepository } from 'app/repositories/notificationDbRepository';
 import { PostDbRepository } from 'app/repositories/postDbRepository';
 import { PostService } from 'app/services/post';
+import { S3Service } from 'app/services/s3';
 
 export class AppServiceProvider extends ServiceProvider {
   /**
@@ -22,6 +23,8 @@ export class AppServiceProvider extends ServiceProvider {
     this.bind(AuthService);
 
     this.bind(PostService);
+    
+    this.bind(S3Service);
     /**
      * Binding the UserDbRepository with a non-class based token 'USER_DB_REPO'.
      *
