@@ -25,16 +25,7 @@
 //   return commandUrl;
 // }
 
-// export async function putProfileImage(userId: String, file: File): Promise<string> {
-//   const command = new PutObjectCommand({
-//     Bucket: process.env.AWS_BUCKET_NAME,
-//     Key: `profile/${userId}/profile.jpg`,
-//     ContentType: 'image/jpeg',
-//   });
 
-//   const commandUrl = await getSignedUrl(s3, command, { expiresIn: 3600 });
-//   return commandUrl;
-// }
 
 // export async function putPostImage(postId: String, userId: String, file: File): Promise<string> {
 //   const command = new PutObjectCommand({
