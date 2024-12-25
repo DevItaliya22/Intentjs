@@ -1,12 +1,13 @@
-import { Controller, Get, Log, Req,Storage, Request, Res, Response } from '@intentjs/core';
+import { Controller, Get, Req, Res, Response } from "@intentjs/core";
+import { NotificationEvent } from "app/events/notifications";
 
-// 1 all routes checked and working
 @Controller()
 export class MainController {
   @Get("")
-  async getHeatlhCheck(@Req() req: Request, @Res() res: Response) {;
-    const s3 =await Storage.disk("s3").get("todos.md");
-    console.log(s3)
-    return res.json({ message: 'Server is up and running' });
+  async getHealthCheck(@Req() req: Request, @Res() res: Response) {
+    const order = { id: 123, product: "A book" };
+    const event = new NotificationEvent(order);
+    event.emit();
+    return res.json({ message: "Server is up and running" });
   }
 }

@@ -50,7 +50,9 @@ export class HttpKernel extends Kernel {
       .for("/post/like/:id")
       .for("/post/dislike/:id")
       .for("/post/:id/comment")
-      .for("/upload/*")
+      .for("/upload/profile") 
+      .for("/upload/post/:id")
+      .for("/upload/banner-image")
   }
 
   /**
